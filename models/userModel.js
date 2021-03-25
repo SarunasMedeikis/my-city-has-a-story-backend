@@ -7,9 +7,9 @@ const userSchema = new mongoose.Schema({
   password: String,
   country: String,
   city: String,
-  stories: [{ type: Schema.Types.ObjectId, ref: "Story" }],
+  stories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Story" }],
 });
 
 const User = mongoose.model("User", userSchema);
 
-export default User;
+module.exports = User;

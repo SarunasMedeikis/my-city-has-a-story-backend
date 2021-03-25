@@ -1,7 +1,7 @@
 const User = require("../models/userModel");
 const mongoose = require("mongoose");
 
-export const createUser = (req, res) => {
+const createUser = (req, res) => {
   const user = new User();
   user.username = req.body.username;
   user.fullname = req.body.fullname;
@@ -20,3 +20,15 @@ export const createUser = (req, res) => {
       res.status(500).json({ error });
     });
 };
+
+const profile = (req, res) => {
+  User.findById(req.params.id, (err, docs) => {
+    if (err) {
+      res.status(500).json({ err });
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+};
+
+module.exports = { createUser, profile };
