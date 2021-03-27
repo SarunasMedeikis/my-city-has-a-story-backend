@@ -13,3 +13,4 @@ Sketching of the UML:
 
 ## Problems:
 1.Find a way to access cities/parse cities.(find api)
+So far considering https://smeijer.github.io/leaflet-geosearch/ this.
